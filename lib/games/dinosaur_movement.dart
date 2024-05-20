@@ -1,0 +1,1 @@
+enum DinosaurMovement { standing, crouching }
