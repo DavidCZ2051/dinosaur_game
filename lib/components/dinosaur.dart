@@ -29,15 +29,18 @@ class Dinosaur extends SpriteGroupComponent<DinosaurMovement>
   }
 
   void jump() {
+    if (current == DinosaurMovement.crouching) return;
+    if (position.y < gameRef.size.y - size.y) return;
     add(
       MoveByEffect(
-        Vector2(0, Config.gravity),
-        EffectController(duration: 0.5, curve: Curves.easeInOut),
+        Vector2(0, -Config.jumpHeight),
+        EffectController(duration: 0.4, curve: Curves.decelerate),
       ),
     );
   }
 
   void crouch() {
+    if (position.y < gameRef.size.y - size.y) return;
     current = DinosaurMovement.crouching;
   }
 
@@ -62,5 +65,9 @@ class Dinosaur extends SpriteGroupComponent<DinosaurMovement>
   @override
   void update(double dt) {
     super.update(dt);
+    // if is not touching the ground then fall
+    if (position.y < gameRef.size.y - size.y) {
+      position.y -= Config.gravity * dt;
+    }
   }
 }

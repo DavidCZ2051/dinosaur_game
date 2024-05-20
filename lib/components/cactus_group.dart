@@ -22,10 +22,12 @@ class CactusGroup extends PositionComponent with HasGameRef<DinosaurGame> {
     super.update(dt);
     position.x -= Config.gameSpeed * dt;
 
-    // remove cactus when it goes off screen
+    // remove cactus when it goes off screen and increase score
     if (position.x < -30) {
       removeFromParent();
+
       gameRef.score += 1;
+      print("Score: ${gameRef.score}");
     }
   }
 }

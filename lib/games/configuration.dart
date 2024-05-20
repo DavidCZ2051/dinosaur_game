@@ -1,5 +1,6 @@
 class Config {
-  static const double gameSpeed = 200;
-  static const double cactusInterval = 1.5;
-  static const double gravity = -100;
+  static const double gameSpeed = 600;
+  static const double cactusInterval = 2;
+  static const double gravity = -400;
+  static const double jumpHeight = 400;
 }
