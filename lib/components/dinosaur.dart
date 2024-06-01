@@ -54,12 +54,18 @@ class Dinosaur extends SpriteGroupComponent<DinosaurMovement>
     PositionComponent other,
   ) {
     super.onCollisionStart(intersectionPoints, other);
-    print("Collision detected");
     gameOver();
   }
 
+  void reset() {
+    position = Vector2(150, gameRef.size.y - size.y);
+    current = DinosaurMovement.standing;
+  }
+
   void gameOver() {
+    gameRef.overlays.add("gameOver");
     gameRef.pauseEngine();
+    gameRef.isHit = true;
   }
 
   @override

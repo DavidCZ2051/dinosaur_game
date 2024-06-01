@@ -27,7 +27,11 @@ class CactusGroup extends PositionComponent with HasGameRef<DinosaurGame> {
       removeFromParent();
 
       gameRef.score += 1;
-      print("Score: ${gameRef.score}");
+    }
+
+    if (gameRef.isHit) {
+      removeFromParent();
+      gameRef.isHit = false;
     }
   }
 }
