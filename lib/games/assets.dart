@@ -1,9 +1,7 @@
 class Assets {
   static const dinosaurStanding = "dinosaur-standing.png";
-  static const dinosaurCrouching = "dinosaur-crouching.png";
 
   static const cactus = "cactus.png";
-  static const meteor = "meteor.png";
 
   static const background = "Layer_0.png";
   static const movingBackground1 = "Layer_1.png";

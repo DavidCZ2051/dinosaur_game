@@ -14,15 +14,12 @@ class Dinosaur extends SpriteGroupComponent<DinosaurMovement>
   @override
   Future<void> onLoad() async {
     final dinosaurStanding = await gameRef.loadSprite(Assets.dinosaurStanding);
-    final dinosaurCrouching =
-        await gameRef.loadSprite(Assets.dinosaurCrouching);
 
     size = Vector2(130, 130);
     position = Vector2(150, gameRef.size.y - size.y);
     current = DinosaurMovement.standing;
     sprites = {
       DinosaurMovement.standing: dinosaurStanding,
-      DinosaurMovement.crouching: dinosaurCrouching,
     };
 
     add(RectangleHitbox());

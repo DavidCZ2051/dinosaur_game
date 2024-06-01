@@ -39,19 +39,15 @@ class DinosaurGame extends FlameGame
     );
   }
 
+  void updateScore() {
+    scoreText.text = "Score: $score";
+  }
+
   @override
   KeyEventResult onKeyEvent(KeyEvent event, Set<KeyboardKey> keysPressed) {
     if (event is KeyDownEvent) {
       if (event.logicalKey == LogicalKeyboardKey.space) {
         dinosaur.jump();
-        return KeyEventResult.handled;
-      } else if (event.logicalKey == LogicalKeyboardKey.keyC) {
-        dinosaur.crouch();
-        return KeyEventResult.handled;
-      }
-    } else if (event is KeyUpEvent) {
-      if (event.logicalKey == LogicalKeyboardKey.keyC) {
-        dinosaur.stand();
         return KeyEventResult.handled;
       }
     }
@@ -62,6 +58,5 @@ class DinosaurGame extends FlameGame
   void update(double dt) {
     super.update(dt);
     interval.update(dt);
-    scoreText.text = "Score: $score";
   }
 }

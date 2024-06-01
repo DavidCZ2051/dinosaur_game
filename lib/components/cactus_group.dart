@@ -12,8 +12,6 @@ class CactusGroup extends PositionComponent with HasGameRef<DinosaurGame> {
 
     addAll([
       Cactus(),
-      Cactus(),
-      Cactus(),
     ]);
   }
 
@@ -27,6 +25,7 @@ class CactusGroup extends PositionComponent with HasGameRef<DinosaurGame> {
       removeFromParent();
 
       gameRef.score += 1;
+      gameRef.updateScore();
     }
 
     if (gameRef.isHit) {
