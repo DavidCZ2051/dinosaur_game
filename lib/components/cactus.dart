@@ -15,7 +15,7 @@ class Cactus extends SpriteComponent with HasGameRef<DinosaurGame> {
     final cactus = await Flame.images.load(Assets.cactus);
     // random size for cactus
     size =
-        Vector2(random.nextDouble() * 70 + 40, random.nextDouble() * 110 + 40);
+        Vector2(random.nextDouble() * 40 + 40, random.nextDouble() * 80 + 40);
     position = Vector2(0, gameRef.size.y - size.y);
     sprite = Sprite(cactus);
 
