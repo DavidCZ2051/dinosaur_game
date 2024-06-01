@@ -54,6 +54,7 @@ class GameOverScreen extends StatelessWidget {
 
   void restartGame() {
     game.score = 0;
+    game.updateScore();
     game.dinosaur.reset();
     game.interval.reset();
     game.overlays.remove(id);
